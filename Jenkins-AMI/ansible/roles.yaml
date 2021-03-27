@@ -1,0 +1,5 @@
+---
+- hosts: default 
+  become: true 
+  roles:
+  - jenkins-ami

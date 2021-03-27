@@ -1,0 +1,21 @@
+---
+# https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
+- name: Update all packages 
+  yum:
+    name: "*"
+    state: latest
+
+- name: Install docker 
+  command: amazon-linux-extras install docker -y 
+
+- name: Start and Enable Docker service 
+  service:
+    name: docker 
+    state: started 
+    enabled: true 
+
+- name: Add ec2-user to docker group 
+  user: 
+    name: ec2-user 
+    groups: docker 
+    append: true 

@@ -1,0 +1,8 @@
+---
+jenkins_key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+jenkins_repo: jenkins.repo
+repo_dir: /etc/yum.repos.d
+jenkins_packages:
+- jenkins 
+- java-1.8.0-openjdk-devel
+

@@ -1,0 +1,22 @@
+---
+- name: Update all packages 
+  yum:
+    name: "*"
+    state: latest
+
+- name: Add Jenkins key 
+  rpm_key:
+    key: "{{ jenkins_key }}"
+    state: present 
+
+- name: Add Jenkins Repository 
+  copy:
+    src: "{{ jenkins_repo }}"
+    dest: "{{ repo_dir }}/{{ jenkins_repo }}"
+
+- name: Install Jenkins 
+  yum:
+    name: "{{ jenkins_packages }}"
+    update_cache: true
+    state: present 
+  notify: Start Jenkins
