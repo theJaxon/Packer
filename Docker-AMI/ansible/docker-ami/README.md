@@ -1,7 +1,7 @@
 DOCKER-AMI
 =========
 
-Install Docker Container enginer on Amazon Linux 2.
+Install Docker Container engine on Amazon Linux 2.
 
 Example Playbook
 ----------------
