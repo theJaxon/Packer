@@ -3,5 +3,6 @@
 - Docker installation steps are from [AWS documentation page](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html)
 - `ansible` directory contains the role used by [ansible provisioner](https://www.packer.io/docs/provisioners/ansible)
 - `docker-ami` role installs and enables docker service, adds ec2-user to the docker group
+- The purpose of this AMI is to serve as a Jenkins slave so JDK is also required.
 
 

@@ -19,3 +19,8 @@
     name: ec2-user 
     groups: docker 
     append: true 
+
+- name: Install JDK
+  yum:
+    name: java-1.8.0-openjdk-devel
+    state: present
