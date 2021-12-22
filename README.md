@@ -16,6 +16,12 @@ packer validate Jenkins-AMI/
 packer build Jenkins-AMI/
 ```
 
+#### Building Consul AMI 
+```bash
+# Select whether it's a client or server machine 
+ packer build -var is_server=true consul/
+```
+
 ---
 
 * Some issues were faced as a result of running as `ec2-user` instead of `root`

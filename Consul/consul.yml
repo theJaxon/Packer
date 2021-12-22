@@ -1,0 +1,6 @@
+---
+- name: Use Terraform role from GH
+  hosts: all
+  become: true
+  roles:
+  - Molecule_Testing
