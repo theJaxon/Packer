@@ -1,0 +1,6 @@
+- hosts: localhost
+  become: true 
+  become_method: sudo
+  remote_user: ubuntu
+  roles:
+  - ansible-role-xfce-ubuntu
