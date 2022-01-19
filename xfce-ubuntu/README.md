@@ -1,0 +1,4 @@
+- Generates Ubuntu 20.04 AMI With XFCE GUI 
+- The command used for generating the AMI is `packer build -var "packer_password=<password>" xfce-ubuntu/`
+- After the AMI Gets created an EC2 can be launched using it, Security group needs to allow RDP port **3389**
+- Remmina is then used to reach the EC2 instance where the public ip of the instance is placed as an input then entering the username and password

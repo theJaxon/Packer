@@ -36,7 +36,6 @@ build {
   }
 
   provisioner "ansible-local" {
-    playbook_file   = "xfce-ubuntu/xfce-ubuntu.yaml"
-    extra_arguments = ["--extra-vars", "\"ubuntu_password=${var.ubuntu_password}\""]
+    extra_arguments = ["--extra-vars", "\"packer_password=${var.packer_password}\""]
   }
 }

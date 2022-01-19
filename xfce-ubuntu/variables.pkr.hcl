@@ -8,7 +8,7 @@ variable "instance_type" {
   default = "t3.micro"
 }
 
-variable "ubuntu_password" {
+variable "packer_password" {
   type    = string
-  description = "default password for ubuntu user"
+  description = "default password for packer user"
 }
