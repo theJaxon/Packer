@@ -1,4 +1,8 @@
 # Packer
+
+![Packer](https://img.shields.io/badge/-packer-02A8EF?style=for-the-badge&logo=packer&logoColor=white)
+
+
 Testing HashiCorp's Packer - a tool for building Golden Images.
 
 ---
@@ -21,6 +25,13 @@ packer build Jenkins-AMI/
 # Select whether it's a client or server machine 
  packer build -var is_server=true consul/
 ```
+
+---
+
+### Provisioners 
+#### [File](https://www.packer.io/docs/provisioners/file) 
+- Used for copying files from local machine to the machine being built by Packer 
+- Common pattern is to copy files to `/tmp` directory in the Packer machine as it can be freely modified
 
 ---
 
