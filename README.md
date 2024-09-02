@@ -7,6 +7,13 @@ Testing HashiCorp's Packer - a tool for building Golden Images.
 
 ---
 
+### Use cases
+1. Create golden images across platforms and environments
+2. Automate patching for workloads
+3. Creating immutable infrastructure
+
+---
+
 ### Starting a Packer build:
 
 ```bash
