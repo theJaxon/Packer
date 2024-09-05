@@ -25,13 +25,26 @@ packer validate Jenkins-AMI/
 
 # Start the build 
 packer build Jenkins-AMI/
+
+# Build all templates in a directory
+packer build <directory>
+
+# Convert old JSON format packer files to new HCL format
+packer hcl2_upgrade <file>
 ```
 
 #### Building Consul AMI 
 ```bash
 # Select whether it's a client or server machine 
- packer build -var is_server=true consul/
+packer build -var is_server=true consul/
 ```
+
+---
+
+### Builders
+- Responsible for creating machines and generating images from them for various platforms
+- **One or more** builder blocks can be specified in a template
+- Each builder block can specify one or more `source blocks`
 
 ---
 
@@ -69,3 +82,8 @@ packer build Jenkins-AMI/
 
 </p>
 </details>
+
+---
+
+### Resources
+1. [UDEMY - Building Automated Machine Images with HashiCorp Packer](https://www.udemy.com/course/hashicorp-packer/?couponCode=OF83024B)
