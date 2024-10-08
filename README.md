@@ -46,6 +46,11 @@ packer build -var is_server=true consul/
 - **One or more** builder blocks can be specified in a template
 - Each builder block can specify one or more `source blocks`
 
+### Variables
+#### [Contextual variables](https://developer.hashicorp.com/packer/docs/templates/hcl_templates/contextual-variables)
+- Metadata about the build that was executed
+- All special build variables are stored in the **`build`** variable
+
 ---
 
 ### Provisioners 
