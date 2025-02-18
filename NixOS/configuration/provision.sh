@@ -1,6 +1,4 @@
-#!/bin/bash
-
-EFI_MOUNT_POINT="/mount/boot"
+EFI_MOUNT_POINT="/mnt/boot"
 NIXOS_CONFIGURATION_DIRECTORY="/mnt/etc/nixos"
 NIX_FILE_LIST=("configuration" "vagrant-hostname" "vagrant-network")
 
