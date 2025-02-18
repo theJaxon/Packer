@@ -3,3 +3,5 @@ packer_cache/
 crash.log
 *.pkrvars.hcl
 *.box
+*.vmdk
+.vagrant/
