@@ -1,11 +1,4 @@
 { config, pkgs, ... }:
-let
-  # control_plane_address = "192.168.100.10";
-  # worker_node_address = "192.168.100.11";
-  # control_plane_api_server_port = 6443;
-  # is_control_plane = if (config.networking.hostName == "controlplane") then true else false;
-
-in
 {
   imports = [
     ./vagrant-hostname.nix
@@ -21,24 +14,9 @@ in
     };
   };
 
-  boot.kernelModules = [
-    "br_netfilter"
-    "overlay"
-  ];
-
   networking = {
     firewall.enable = false;
     usePredictableInterfaceNames = false;
-    hosts = {
-      "${control_plane_address}" = [
-        "controlplane"
-        "controlplane.mkube"
-      ];
-      "${worker_node_address}" = [
-        "worker"
-        "worker.mkube"
-      ];
-    };
   };
 
   virtualisation.vmware.guest.enable = true;
@@ -87,35 +65,8 @@ in
     %wheel  ALL=(ALL) NOPASSWD: ALL, SETENV: ALL
   '';
 
-  system.activationScripts.script.text = ''
-    mkdir --verbose --parents /home/vagrant/.kube
-    ln --verbose --symbolic  --force /etc/kubernetes/cluster-admin.kubeconfig /home/vagrant/.kube/config
-    chown vagrant:vagrant /var/lib/kubernetes/secrets/cluster-admin-key.pem
-    chown vagrant:vagrant /var/lib/kubernetes/secrets/apitoken.secret
-  '';
-
   environment.systemPackages = with pkgs; [
     git
-    kubectl
-    kubernetes
-    kubernetes-helm
     vim
   ];
-
-  environment.shellAliases = {
-    k = "kubectl";
-  };
-
-  # services.kubernetes = {
-  #   roles = if is_control_plane then [ "master" ] else [ "node" ];
-  #   masterAddress = "controlplane";
-  #   apiserverAddress = "https://controlplane:${toString control_plane_api_server_port}";
-  #   kubelet.kubeconfig.server = "https://controlplane:${toString control_plane_api_server_port}";
-  #   easyCerts = true;
-  #   addons.dns.enable = true;
-  #   apiserver = {
-  #     securePort = control_plane_api_server_port;
-  #     advertiseAddress = control_plane_address;
-  #   };
-  # };
 }
