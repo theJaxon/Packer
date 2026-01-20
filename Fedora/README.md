@@ -7,7 +7,7 @@
 packer init .
 
 # Build the base box
-pacxker build .
+packer build .
 ```
 
 - Should result in a new Vagrant Box created.
@@ -18,5 +18,4 @@ pacxker build .
 
 ```bash
 vagrant box add mkube file://fedora.box
-
 ```
