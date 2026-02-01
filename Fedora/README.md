@@ -18,4 +18,7 @@ packer build .
 
 ```bash
 vagrant box add mkube file://fedora.box
+# Creates a Vagrantfile
+vagrant init fedora
+vagrant up --provider virtualbox
 ```
