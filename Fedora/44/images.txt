@@ -1,0 +1,30 @@
+# Images pre-pulled into the MKube box. Tags are pinned on purpose: bump them together
+# with the matching versions in MKube (kubeadm, Cilium, MetalLB, Traefik, local-path).
+
+# kubeadm v1.37.1 (`kubeadm config images list --kubernetes-version v1.37.1`)
+registry.k8s.io/kube-apiserver:v1.37.1
+registry.k8s.io/kube-controller-manager:v1.37.1
+registry.k8s.io/kube-scheduler:v1.37.1
+registry.k8s.io/kube-proxy:v1.37.1
+registry.k8s.io/coredns/coredns:v1.14.6
+registry.k8s.io/pause:3.10.2
+registry.k8s.io/etcd:3.7.0-0
+
+# Cilium 1.20.3 (Helm chart 1.20.3, deployed with useDigest: false)
+quay.io/cilium/cilium:v1.20.3
+quay.io/cilium/operator-generic:v1.20.3
+quay.io/cilium/cilium-envoy:v1.38.6-1791537840-00e749f11f69334c625e53fc1ce2fc6c7f34a51f
+
+# MetalLB 0.16.1 (native L2 mode, frr-k8s disabled)
+quay.io/metallb/controller:v0.16.1
+quay.io/metallb/speaker:v0.16.1
+
+# Traefik Helm chart 41.5.0
+docker.io/library/traefik:v3.7.13
+
+# Local Path Provisioner 0.0.34 and its helper pod
+docker.io/rancher/local-path-provisioner:v0.0.34
+docker.io/library/busybox:1.37.0
+
+# MKube smoke test
+docker.io/traefik/whoami:v1.11
